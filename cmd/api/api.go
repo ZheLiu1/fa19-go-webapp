@@ -32,11 +32,3 @@ func GetWeather(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
-	router := mux.NewRouter()
-	router.HandleFunc("/current/{cityName}", GetWeather)
-
-	host, port := "0.0.0.0", "8080"
-	log.Printf("Server started on %v:%v", host, port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf("%v:%v", host, port), router))
-}
