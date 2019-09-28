@@ -31,6 +31,7 @@ func GetWeather(w http.ResponseWriter, r *http.Request) {
 		log.Println("Error occurred during writing response.")
 	}
 }
+
 func main() {
 	router := mux.NewRouter()
 	router.HandleFunc("/current/{cityName}", GetWeather)
